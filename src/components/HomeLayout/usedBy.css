@@ -9,7 +9,7 @@
 }
 
 .usedby-desc{
-    width: 800px;
+    max-width: 800px;
     margin: auto;
     text-align: center;
     display: flex;
@@ -29,4 +29,30 @@
     color: #5F6D7E;
     font-size: 16px;
     letter-spacing: -0.1px;
+}
+
+
+@media screen and (max-width:1150px) {
+    .usedby-section{
+        padding: 50px;
+    }
+    
+}
+
+@media screen and (max-width:1050px) {
+    .usedby-section{
+        padding: 32px;
+    }
+    
+}
+
+@media screen and (max-width:600px) {
+    .usedby-section{
+        padding: 16px;
+    }
+    .usedby-desc>h2{
+    
+    font-size: 24px;
+    
+}
 }

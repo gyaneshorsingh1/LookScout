@@ -18,7 +18,7 @@
 
 }
 .sendemail-container>h2{
-    width: 800px;
+    max-width: 800px;
     margin: auto;
     font-size: 32px;
     font-weight: 600;
@@ -88,4 +88,80 @@
     font-weight: 500;
     list-style: none;
 
+}
+
+@media screen and (max-width:1150px) {
+    .sendemail{
+        padding: 50px;
+    }
+    
+}
+
+@media screen and (max-width:1050px) {
+    .sendemail{
+        padding: 32px;
+    }
+    
+}
+
+@media screen and (max-width:600px) {
+    .sendemail{
+        padding: 16px;
+    }
+    .sendemail-container>h2{
+        font-size: 24px;
+    }
+    .email-input{
+
+    width: 100%;
+    height: auto;
+    row-gap: 16px;
+    border-radius: 6px;
+
+    flex-direction: column;
+
+}
+
+.email-input>input{
+    width: 100%;
+    height: 46px;
+    border-radius: 6px;
+    
+    
+    
+}
+
+.email-input>button{
+    width: 100%;
+    height: 48px;
+    border-radius: 6px;
+
+
+}
+
+
+.list-tags{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 16px;
+
+}
+
+.list-tags> li{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    color: #272D37;
+    font-size: 16px;
+    letter-spacing: -0.1px;
+    font-weight: 500;
+    list-style: none;
+
+}
 }

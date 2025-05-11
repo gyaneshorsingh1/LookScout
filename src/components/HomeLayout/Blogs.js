@@ -38,7 +38,7 @@ export default function Blogs() {
 
                         </div>
                         <div className="card1">
-                            <img src="blog1.png" alt="blog1" />
+                            <img src="blog2.png" alt="blog1" />
                             <h3>Organize your digital assets with a new methodology here.</h3>
                             <p>
                                 Podcasting operational management inside of workflows to establish a framework seamless.
@@ -61,7 +61,7 @@ export default function Blogs() {
 
                         </div>
                         <div className="card1">
-                            <img src="blog1.png" alt="blog1" />
+                            <img src="blog3.png" alt="blog1" />
                             <h3>Organize your digital assets with a new methodology here.</h3>
                             <p>
                                 Podcasting operational management inside of workflows to establish a framework seamless.

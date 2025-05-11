@@ -17,7 +17,7 @@
     font-size: 28px;
     letter-spacing: -1%;
     font-weight: 500;
-    width: 844px;
+    max-width: 844px;
     text-align: center;
     color: #272D37;
 }
@@ -57,4 +57,52 @@
     letter-spacing: -0.1px;
     font-weight: 500;
     font-size: 14px;
+}
+
+
+
+
+@media screen and (max-width:1150px) {
+    .thanks-section-container{
+        padding: 50px;
+    }
+    
+}
+
+@media screen and (max-width:1050px) {
+    .thanks-section-container{
+        padding: 32px;
+    }
+    .thanks-section-container>div{
+        justify-content: start;
+        align-items: start;
+    }
+    .thanks-section-container>div>h4{
+        font-size: 22px;
+        font-weight: 600;
+        width: auto;
+        text-align: start;
+    }
+    .logo-black-sec{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+   }
+   .logo-black{
+    width: 128px;
+    height: 32px;
+   }
+   
+}
+
+
+@media screen and (max-width:1050px) {
+.thanks-section-container>div>h4{
+    font-size: 20px;
+}
+.thanks-section-container>div{
+    height: auto;
+    padding: 16px;
+}
 }

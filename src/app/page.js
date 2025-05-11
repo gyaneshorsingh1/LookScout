@@ -1,3 +1,4 @@
+
 import Navbar from "@/components/Header/Navbar";
 import "./page.css"
 import HeroSection from "@/components/HomeLayout/HeroSection";
@@ -11,6 +12,10 @@ import SendEmail from "@/components/HomeLayout/SendEmail";
 import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
+
+
+
+
   return (
     <>
     <div className="first-section bg-primary-900">

@@ -7,9 +7,11 @@
 
 .blogs-container> .message-heading{
     color: #272D37;
-    width: 800px;
+    max-width: 800px;
     text-align: center;
     margin: auto;
+    letter-spacing: -2%;
+    font-weight: 700;
 }
 
 
@@ -26,8 +28,8 @@
     height: 552px;
     width: 384px;
     flex-direction: column;
-    
-    gap: 24px;
+    gap: 10px;
+    border-radius: 5px;
 }
 
 .card1>h3{
@@ -52,4 +54,71 @@
 }
 .writer>p{
     color: #5F6D7E;
+}
+
+
+
+
+@media screen and (max-width:1150px) {
+    .blogs-section{
+        padding: 50px;
+    }    
+}
+
+
+
+@media screen and (max-width:1070px) {
+    .blogs-section{
+        padding: 50px;
+    }    
+     .blogs .card1:nth-child(3) {
+  display: none;
+}
+}
+
+@media screen and (max-width:1050px) {
+    .blogs-section{
+        padding: 32px;
+    } 
+    .blogs-container >.message-heading{
+        font-size: 32px;
+
+    }
+    .card1{
+    display: flex;
+    height: 578px;
+    width: 336px;
+    flex-direction: column;
+    gap: 24px;
+
+    }
+    .blogs{
+    margin-top: 64px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 14px;
+    
+    column-gap: 10px;
+}
+
+   
+}
+
+
+
+@media screen and (max-width:600px) {
+    .blogs-section{
+        padding: 16px;
+    } 
+    .blogs-container >.message-heading{
+        font-size: 24px;
+    }
+    .blogs{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .card1{
+        width: 343px;
+    }
 }

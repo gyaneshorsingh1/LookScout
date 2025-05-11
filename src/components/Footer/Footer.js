@@ -45,6 +45,15 @@ export default function Footer(){
                     </div>
                 </div>
              </div>
+             <div className="copyrights">
+                <p>© 2023 Lookscout. All Rights Reserved.</p>
+                <div className="social-medias">
+                    <img src="fb.png" alt="" />
+                    <img src="google.png" alt="" />
+                    <img src="apple.png" alt="" />
+                    <img src="insta.png" alt="" />
+                </div>
+             </div>
           </section>
         </>
     )

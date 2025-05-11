@@ -19,3 +19,39 @@
     flex-direction: column;
     row-gap: 32px;
 }
+
+
+@media screen and (max-width:1150px) {
+    .section4{
+        padding: 50px;
+    }
+    .left-img-section4>img{
+  width: 400px;
+  height: 400px;
+}
+    
+}
+
+@media screen and (max-width:1150px) {
+  .section4{
+    padding: 32px;
+    flex-direction: column;
+    row-gap: 32px;
+  }
+  .feature-left{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .left-img-section4>img{
+  width: 343px;
+  height: 343px;
+}
+  .section4{
+    padding: 16px;
+    flex-direction: column;
+    row-gap: 32px;
+  }
+  
+}

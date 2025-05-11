@@ -2,6 +2,7 @@
     background: #ffffff;
     color: #272D37;
     padding: 64px 100px;
+    margin-top: 64px;
 }
 
 .message-heading{
@@ -14,11 +15,13 @@
 .message-heading>h2{
     font-size: 32px;
     letter-spacing: -2%;
+    font-weight: 700;
 }
 .message-heading>p{
     font-size: 16px;
     letter-spacing: -0.1px;
     color: #5F6D7E;
+    font-weight: 400;
 }
 
 
@@ -35,7 +38,7 @@
 
 .msg-box{
     height: 220px;
-    width: 384px;
+    width: 336px;
     border-radius: 5px;
     
     display: flex;
@@ -83,4 +86,45 @@
     top: -1px;
     margin-left: 5px;
 
+}
+
+
+
+
+@media screen and (max-width:1150px) {
+    .message-section{
+        padding: 50px;
+    }
+    
+}
+
+@media screen and (max-width:1050px) {
+    .message-section{
+        padding: 32px;
+    }
+    .box-section{
+        gap: 32px;
+    }
+    
+}
+
+
+
+@media screen and (max-width:600px) {
+    .message-heading>h2{
+    font-size: 24px;
+    letter-spacing: -2%;
+    font-weight: 700;
+}
+.msg-box{
+    width: 339px;
+    height: 210px;
+    margin: 0;
+}
+.msg-box>h4{
+    font-size: 20px;
+}
+.message-section{
+    padding: 16px;
+}
 }

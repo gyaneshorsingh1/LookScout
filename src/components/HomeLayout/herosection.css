@@ -48,6 +48,7 @@
     background: #437EF7;
     border-radius: 6px;
     font-size: 15px;
+    cursor: pointer;
 }
 
 .left-hero >div{
@@ -62,7 +63,7 @@
     justify-content: space-around;
     gap: 10px;
     
-    height: 28px;
+    height: auto;
 }
 .com-logos>img{
     width: 112px;
@@ -94,4 +95,119 @@
     position: absolute;
     z-index: 1;
     right: -103.5px;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:1150px) {
+    .hero-section{
+        padding: 50px;
+    }
+    
+}
+
+
+
+@media screen and (max-width:1050px) {
+    .hero-section{
+        padding: 48px;
+        height: auto;
+    }
+
+    .hero-main{
+        
+        flex-direction: column-reverse;
+        height: auto;
+        gap: 40px;
+    }
+    .left-hero,.right-hero{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-img{
+        width: 448px;
+        height: 560px;
+    }
+    .right-hero > .bg-box{
+    height: 607px;
+    top: -48px;
+    width: 600px;
+    background: #3971E7;
+    position: absolute;
+    z-index: 1;
+    right: -67px;
+}
+.left-hero> h2{
+    font-weight: 700;
+    line-height: 60px;
+    letter-spacing: -1%;
+    font-size: 52px;
+}
+}
+
+@media screen and (max-width:600px) {
+    .hero-section{
+        padding: 16px;
+    }
+    .hero-img{
+        width: 274.6px;
+        height: 343.25px;
+    }
+    .right-hero > .bg-box{
+    height: 360px;
+    top: -16px;
+    width: 446px;
+    background: #3971E7;
+    position: absolute;
+    z-index: 1;
+    left: 170px;
+    }
+
+    .left-hero{
+        gap: 16px;
+        width: 100%;
+    }
+    .left-hero>h2{
+        font-size: 36px;
+        line-height: 44px;
+        font-weight: 600;
+        letter-spacing: -2%;
+    }
+    .left-hero>p{
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.675);
+    letter-spacing: -0.1px;
+    font-weight: 400;
+    line-height: 26px;
+
+}
+.left-hero>div{
+    width: 100%;
+}
+.com-logos>img{
+   width: auto;
+   height: 28px;
+}
+.com-logos{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    place-items: center;
+    width: 100%;
+    row-gap: 12px;
+}
+.notif-btn{
+    height: 46px;
+    width: 100%;
+    background: #437EF7;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
 }

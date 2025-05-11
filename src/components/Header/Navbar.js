@@ -13,10 +13,14 @@ export default function Navbar() {
             <Link href="/Resources">Resources</Link>
             <Link href="/Contacts">Contacts</Link>
         </div>
+
     </div>
     <div className="login-btns">
         <button className="login-btn">Log in</button>
         <button className="signup-btn">Sign up</button>
     </div>
+    
+      <img className="nav-icon" src="nav-icon.png" />
+    
   </nav>
 }

@@ -47,3 +47,40 @@
     font-size: 15px;
     
 }
+.nav-icon{
+    display: none;
+}
+
+
+@media screen and (max-width:1350px) {
+    .navbar{
+        padding: 50px;
+    }
+    .left-nav{
+        width: auto;
+        gap: 15px;
+    }
+}
+
+
+
+
+@media screen and (max-width:1050px) {
+    .navbar{
+        padding: 16px;
+        height: 64px;
+    }    
+    .nav-links{
+        display: none;
+    }
+    .login-btns{
+        display: none;
+    }
+    .nav-icon{
+    display: block;
+    }
+    .logo{
+        height: auto;
+        width: 120px;
+    }
+}

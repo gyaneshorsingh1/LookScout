@@ -7,7 +7,7 @@ export default function ProductFeatures() {
             <section className="product-features-section">
                 <div className="message-heading">
                     <h2>
-                        Messaging for all
+                        Redefining Product Features
                     </h2>
                     <p>
                         Keeping your eye on the ball while performing a deep dive on the start-up mentality to  derive convergence <br /> on cross-platform integration.
