@@ -1,0 +1,49 @@
+.logo{
+    height: 40px;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 0 100px;
+    height: 10vh;
+    border: 1px solid rgba(100, 142, 247, 1);
+}
+
+.left-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+
+.nav-links{
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+}
+
+.nav-links > a{
+   font-size: 15px;
+}
+
+
+
+.login-btns{
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+}
+.login-btn{
+    font-size: 15px;
+}
+.signup-btn{
+    
+    background: #437EF7;
+    width: 91px;
+    height: 46px;
+    border-radius: 6px;
+    font-size: 15px;
+    
+}

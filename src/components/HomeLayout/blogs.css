@@ -1,0 +1,55 @@
+
+.blogs-section{
+    padding: 64px 100px;
+    width: 100%;
+
+}
+
+.blogs-container> .message-heading{
+    color: #272D37;
+    width: 800px;
+    text-align: center;
+    margin: auto;
+}
+
+
+.blogs{
+    margin-top: 64px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 64px;
+    column-gap: 10px;
+}
+.card1{
+    display: flex;
+    height: 552px;
+    width: 384px;
+    flex-direction: column;
+    
+    gap: 24px;
+}
+
+.card1>h3{
+    color: #272D37;
+    font-size: 22px;
+    letter-spacing: -1%;
+    font-weight: 600;
+}
+.card1>p{
+    color: #5F6D7E;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+}
+
+
+.writer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.writer>p{
+    color: #5F6D7E;
+}

@@ -1,0 +1,21 @@
+
+.section4{
+    width: 100%;
+    padding: 64px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.left-img-section4>img{
+  width: 560px;
+  height: 560px;
+}
+
+.feature-left{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    row-gap: 32px;
+}

@@ -1,0 +1,97 @@
+.hero-section{
+    padding: 0 100px;
+    height: 90vh;
+}
+
+.hero-main{
+    width: auto;
+    height: 100%;
+    
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    
+}
+
+.left-hero{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 50%;
+    gap: 40px;
+
+}
+.right-hero{
+    width: 50%;
+    height: 100%;
+}
+
+.left-hero> h2{
+    font-weight: 700;
+    line-height: 60px;
+    letter-spacing: -0.1px;
+    font-size: 60px;
+}
+
+.left-hero>p{
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.675);
+    letter-spacing: -0.1px;
+    font-weight: 400;
+}
+
+.notif-btn{
+    height: 46px;
+    width: 162px;
+    background: #437EF7;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.left-hero >div{
+    width: 70%;
+}
+
+.left-hero>div>p{
+    margin-bottom: 16px;
+}
+.com-logos{
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    
+    height: 28px;
+}
+.com-logos>img{
+    width: 112px;
+    height: 28px;
+}
+
+
+
+
+.right-hero{
+    display: flex;
+    justify-content: end;
+    position: relative;
+    align-items: center;
+}
+.hero-img{
+    width: 448px;
+    height: 560px;
+    margin-right: 7vh;
+    position: relative;
+    z-index: 2;
+}
+
+.right-hero > .bg-box{
+    height: 90vh;
+    top: 0;
+    width: 488px;
+    background: #3971E7;
+    position: absolute;
+    z-index: 1;
+    right: -103.5px;
+}
