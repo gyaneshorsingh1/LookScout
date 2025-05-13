@@ -12,12 +12,11 @@ import UsedBy from "@/components/HomeLayout/UsedBy";
 import SendEmail from "@/components/HomeLayout/SendEmail";
 import Footer from "@/components/Footer/Footer";
 import CustomerSays from "@/components/HomeLayout/CustomerSays";
-import useWindowWidth from "@/components/HomeLayout/WindowWidth/UseWindowWidth";
 
 
 export default function Home() {
 
-  const width = useWindowWidth();
+
 
   return (
     <>
@@ -35,7 +34,7 @@ export default function Home() {
       <LayoutFeature />
     </div>
     <div className="customer-says-part">
-       {width <= 778 && <CustomerSays />}
+       <CustomerSays />
     </div>
     <div className="thanks-section">
         <Thanks />

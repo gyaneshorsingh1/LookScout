@@ -14,7 +14,7 @@ export default function LayoutFeature() {
                         <div>
                             <img src='feature-icon3.png' />
                         </div>
-                        <div className="f-card-right">
+                        <div className="f-card-right f-card-right2">
                             <h4>
                                 Explore ideas together
                             </h4>
@@ -26,7 +26,7 @@ export default function LayoutFeature() {
                         <div>
                             <img src='feature-icon2.png' />
                         </div>
-                        <div className="f-card-right">
+                        <div className="f-card-right f-card-right2">
                             <h4>
                                 Bring those ideas to life
                             </h4>
@@ -39,7 +39,7 @@ export default function LayoutFeature() {
                         <div>
                             <img src='feature-icon1.png' />
                         </div>
-                        <div className="f-card-right">
+                        <div className="f-card-right f-card-right2">
                             <h4>
                                 Ship better outcomes
                             </h4>

@@ -1,3 +1,5 @@
+"use client"
+
 import "./ProductFeatures.css";
 import "./message.css";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';

@@ -4,6 +4,25 @@
   overflow: hidden;
 }
 
+
+.notification-message {
+  position: fixed;
+  z-index: 5;
+  top: 15vh;
+  right: 50%;
+  transform: translate(50%,-50%);
+  background-color: #18c6c6;
+
+  border: 2px solid #17f6f6;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 16px;
+  text-align: center;
+}
+
+
 .hero-main {
   width: auto;
   height: 100%;
@@ -90,7 +109,7 @@
 }
 .right-hero > .bg-box::after {
   content: "";
-  height: 100vh;
+  height: 110vh;
   position: absolute;
   top: -10vh;
   left: 112px;
@@ -126,7 +145,7 @@
     position: relative;
   }
   .right-hero > .bg-box::after {
-    height: 90vh;
+    height: 150vh;
     top: auto;
     bottom: 0;
     left: 112px;
