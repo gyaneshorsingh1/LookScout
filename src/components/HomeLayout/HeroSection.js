@@ -24,8 +24,9 @@ export default function(){
                     </div>
                 </div>
                 <div className="right-hero">
+                    <div className="bg-box">
                     <img src="hero-img.png"  alt="hero img" className="hero-img"/>
-                    <div className="bg-box"></div>
+                    </div>
                 </div>
             </div>
           </div>

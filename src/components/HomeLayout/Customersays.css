@@ -1,0 +1,85 @@
+.customer-section{
+    padding: 16px;
+
+}
+
+.customer-says{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.customer-says>h2{
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: -2%;
+    font-weight: 700;
+    color: #272D37;
+}
+
+.customer-says>p{
+    text-align: center;
+    color: #5F6D7E;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.1px;
+
+}
+
+
+@media screen and (max-width:778px) {
+    .customer-section{
+    padding: 32px;
+
+}
+
+.customer-says{
+    gap: 16px;
+}
+
+.customer-says>h2{
+    font-size: 32px; 
+}
+
+.customer-says>p{
+    text-align: center;
+    color: #5F6D7E;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.1px;
+
+}
+}
+
+
+@media screen and (max-width: 600px) {
+    .customer-section{
+    padding: 16px;
+
+}
+
+.customer-says{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.customer-says>h2{
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: -2%;
+    font-weight: 700;
+    color: #272D37;
+}
+
+.customer-says>p{
+    text-align: center;
+    color: #5F6D7E;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.1px;
+
+}
+}

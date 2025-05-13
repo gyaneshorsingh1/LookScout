@@ -1,58 +1,108 @@
-.usedby-section{
-    width: 100%;
-    padding: 64px 100px;
+.usedby-section {
+  width: 100%;
+  padding: 64px 100px;
 }
-.usedby-container{
-    display: flex;
-    flex-direction: column;
-    row-gap: 64px;
-}
-
-.usedby-desc{
-    max-width: 800px;
-    margin: auto;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    row-gap: 8px;
-}
-.usedby-desc>h2{
-    font-weight: 700;
-    font-size: 32px;
-    letter-spacing: -2%;
-    color: #272D37;
-    text-align: center;
+.usedby-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 64px;
 }
 
-.usedby-desc>p{
-    font-weight: 400;
-    color: #5F6D7E;
-    font-size: 16px;
-    letter-spacing: -0.1px;
+.usedby-desc {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+.usedby-desc > h2 {
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: -2%;
+  color: #272d37;
+  text-align: center;
 }
 
-
-@media screen and (max-width:1150px) {
-    .usedby-section{
-        padding: 50px;
-    }
-    
+.usedby-desc > p {
+  font-weight: 400;
+  color: #5f6d7e;
+  font-size: 16px;
+  letter-spacing: -0.1px;
 }
 
-@media screen and (max-width:1050px) {
-    .usedby-section{
-        padding: 32px;
-    }
-    
+.companies {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-content: space-between;
+  align-items: center;
 }
 
-@media screen and (max-width:600px) {
-    .usedby-section{
-        padding: 16px;
-    }
-    .usedby-desc>h2{
-    
+.companies > img {
+  width: 128px;
+}
+
+@media screen and (max-width: 1150px) {
+  .usedby-section {
+    padding: 50px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .usedby-section {
+    padding: 32px;
+  }
+  .companies {
+    gap: 32px;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+  }
+
+  /* Second row setup */
+.second-row {
+  grid-column: span 2; /* Each spans 2 columns */
+}
+
+/* Add space between second-row boxes */
+.second-row:nth-child(5) {
+  justify-self: end;
+  margin-right: 16px; /* half of 32px gap */
+}
+
+.second-row:nth-child(6) {
+  justify-self: start;
+  margin-left: 16px; /* half of 32px gap */
+}
+}
+@media screen and (max-width: 600px) {
+  .usedby-section {
+    padding: 16px;
+    padding-top: 32px;
+  }
+  .usedby-desc > h2 {
     font-size: 24px;
-    
+  }
+  .companies{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 32px;
+  }
+    /* Second row setup */
+.second-row {
+  grid-column: span 1; /* Each spans 2 columns */
+}
+
+/* Add space between second-row boxes */
+.second-row:nth-child(5) {
+  justify-self: end;
+  margin-right: 0; /* half of 32px gap */
+}
+
+.second-row:nth-child(6) {
+  justify-self: start;
+  margin-left: 0; /* half of 32px gap */
 }
 }

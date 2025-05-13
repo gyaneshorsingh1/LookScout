@@ -76,6 +76,7 @@
     .thanks-section-container>div{
         justify-content: start;
         align-items: start;
+        padding: 32px;
     }
     .thanks-section-container>div>h4{
         font-size: 22px;
@@ -97,12 +98,22 @@
 }
 
 
-@media screen and (max-width:1050px) {
+@media screen and (max-width:600px) {
+    .thanks-section-container{
+        padding: 16px;
+        
+    }
 .thanks-section-container>div>h4{
     font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -1px;
 }
 .thanks-section-container>div{
-    height: auto;
     padding: 16px;
+    row-gap: 16px;
+    width: 100%;
+    border-radius: 5px;
+    height: auto;
+
 }
 }

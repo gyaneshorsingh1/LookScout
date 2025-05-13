@@ -89,6 +89,10 @@
     list-style: none;
 
 }
+.list-tags>li>img{
+    width: 20px;
+    height: 20px;
+}
 
 @media screen and (max-width:1150px) {
     .sendemail{
@@ -106,10 +110,16 @@
 
 @media screen and (max-width:600px) {
     .sendemail{
-        padding: 16px;
+        padding: 32px 16px;
+    }
+    .sendemail-container{
+        gap: 24px;
+    }
+    .sendemail-container>h4{
+        font-size: 14px;
     }
     .sendemail-container>h2{
-        font-size: 24px;
+        font-size: 28px;
     }
     .email-input{
 
@@ -141,21 +151,22 @@
 
 
 .list-tags{
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-bottom: 16px;
+    width: auto;
+    margin: auto;
+    column-gap: 40px;
+    row-gap: 16px;
 
 }
 
 .list-tags> li{
     
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
     gap: 12px;
     color: #272D37;
     font-size: 16px;

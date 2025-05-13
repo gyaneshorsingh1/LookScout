@@ -1,3 +1,4 @@
+"use client";
 
 import Navbar from "@/components/Header/Navbar";
 import "./page.css"
@@ -10,18 +11,19 @@ import Blogs from "@/components/HomeLayout/Blogs";
 import UsedBy from "@/components/HomeLayout/UsedBy";
 import SendEmail from "@/components/HomeLayout/SendEmail";
 import Footer from "@/components/Footer/Footer";
+import CustomerSays from "@/components/HomeLayout/CustomerSays";
+import useWindowWidth from "@/components/HomeLayout/WindowWidth/UseWindowWidth";
+
 
 export default function Home() {
 
-
-
+  const width = useWindowWidth();
 
   return (
     <>
     <div className="first-section bg-primary-900">
        <Navbar />
        <HeroSection />
-
     </div>
     <div className="message-for-all">
         <Message />
@@ -31,6 +33,9 @@ export default function Home() {
     </div>
     <div className="section4-layout">
       <LayoutFeature />
+    </div>
+    <div className="customer-says-part">
+       {width <= 778 && <CustomerSays />}
     </div>
     <div className="thanks-section">
         <Thanks />

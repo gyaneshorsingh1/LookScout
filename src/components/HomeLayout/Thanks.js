@@ -8,7 +8,7 @@ export default function Thanks() {
                     <div className="logo-black-sec">
                         <img src="logo-black.png" alt="logo" className="logo-black" />
                     </div>
-                    <h4>Thank you for making it painless, pleasant and most of all hassle free! I love LookScout. I can't say enough about LookScout. <br /> Great job, I will definitely be ordering again!</h4>
+                    <h4>Thank you for making it painless, pleasant and most of all hassle free! I love LookScout. I can't say enough about LookScout. Great job, I will definitely be ordering again!</h4>
                     <div className="ceo-card">
                         <div>
                             <img src="Avatar.png" alt="avatar" />

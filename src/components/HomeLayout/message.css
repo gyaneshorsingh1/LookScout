@@ -1,130 +1,144 @@
-.message-section{
-    background: #ffffff;
-    color: #272D37;
-    padding: 64px 100px;
-    margin-top: 64px;
+.message-section {
+  background: #ffffff;
+  color: #272d37;
+  padding: 64px 100px;
 }
 
-.message-heading{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+.message-heading {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.message-heading>h2{
-    font-size: 32px;
-    letter-spacing: -2%;
-    font-weight: 700;
+.message-heading > h2 {
+  font-size: 32px;
+  letter-spacing: -2%;
+  font-weight: 700;
 }
-.message-heading>p{
-    font-size: 16px;
-    letter-spacing: -0.1px;
-    color: #5F6D7E;
-    font-weight: 400;
-}
-
-
-
-.box-section{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    column-gap: 20px;
-    row-gap: 64px;
-    margin-top: 64px;
+.message-heading > p {
+  font-size: 16px;
+  letter-spacing: -0.1px;
+  color: #5f6d7e;
+  font-weight: 400;
 }
 
-.msg-box{
-    height: 220px;
+.box-section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 32px;
+  row-gap: 64px;
+  margin-top: 64px;
+}
+
+.msg-box {
+  height: 220px;
+  width: 384px;
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: start;
+  gap: 16px;
+  flex-direction: column;
+  align-items: start;
+  position: relative;
+}
+.msg-box > img {
+  width: 48px;
+  height: 48px;
+  border-radius: 30px;
+}
+
+.msg-box > h4 {
+  font-size: 22px;
+  letter-spacing: -1%;
+  font-weight: 600;
+}
+
+.msg-box > p {
+  color: #5f6d7e;
+  font-size: 16px;
+  letter-spacing: -0.1px;
+  font-weight: 400;
+}
+.msg-box > .learn-more {
+  color: #437ef7;
+  font-size: 15px;
+  font-weight: 600;
+
+  letter-spacing: 0px;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+}
+
+.learn-more > .arrow-icon {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: -1px;
+  margin-left: 5px;
+}
+
+@media screen and (max-width: 1150px) {
+  .message-section {
+    padding: 50px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .message-section {
+    padding: 32px;
+  }
+  .box-section {
+    gap: 32px;
+    row-gap: 48px;
+  }
+  .msg-box {
     width: 336px;
-    border-radius: 5px;
-    
-    display: flex;
-    justify-content: start;
+    height: 220px;
+  }
+}
+
+@media screen and (max-width: 776px) {
+  .message-section {
+    padding: 32px;
+  }
+  .box-section {
     gap: 16px;
-    flex-direction: column;
-    align-items: start;
-    position: relative;
-
-}
-.msg-box >img{
-    width: 48px;
-    height: 48px;
-    border-radius: 30px;
-}
-
-.msg-box>h4{
-    font-size: 22px;
-    letter-spacing: -1%;
-    font-weight: 600;
-}
-
-.msg-box>p{
-    color: #5F6D7E;
-    font-size: 16px;
-    letter-spacing: -0.1px;
-    font-weight: 400;
-}
-.msg-box> .learn-more{
-    color: #437EF7;
-    font-size: 15px;
-    font-weight: 600;
-
-    letter-spacing: 0px;
-    height: 100%;
-    display: flex;
-    justify-content: start;
-    align-items: end;
-}
-
-.learn-more>.arrow-icon{
-    width: 20px;
-    height: 20px;
-    position: relative;
-    top: -1px;
-    margin-left: 5px;
-
-}
-
-
-
-
-@media screen and (max-width:1150px) {
-    .message-section{
-        padding: 50px;
-    }
+    row-gap: 48px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
     
+  }
+  .msg-box {
+    width: auto;
+    height: auto;
+  }
 }
 
-@media screen and (max-width:1050px) {
-    .message-section{
-        padding: 32px;
-    }
-    .box-section{
-        gap: 32px;
-    }
-    
-}
-
-
-
-@media screen and (max-width:600px) {
-    .message-heading>h2{
+@media screen and (max-width: 600px) {
+  .message-heading > h2 {
     font-size: 24px;
     letter-spacing: -2%;
     font-weight: 700;
-}
-.msg-box{
-    width: 339px;
-    height: 210px;
+    
+
+  }
+  .box-section{
+    display: flex;
+    row-gap: 40px;
+    padding: 32px 0;
     margin: 0;
-}
-.msg-box>h4{
+  }
+  
+  .msg-box > h4 {
     font-size: 20px;
-}
-.message-section{
-    padding: 16px;
-}
+  }
+  .message-section {
+    padding: 32px 16px;
+  }
 }

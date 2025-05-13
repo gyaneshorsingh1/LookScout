@@ -12,6 +12,8 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  max-width: 800px;
+  margin: auto;
 }
 
 .message-heading > h2 {
@@ -122,12 +124,14 @@
   }
 
   .feature-right > img {
-    width: 400px;
+    width: auto;
     height: 400px;
   }
+
   .feature-container {
     flex-direction: column-reverse;
     row-gap: 32px;
+    margin-top: 32px;
   }
   .feature-container .feature-left {
     width: 100%;
@@ -159,12 +163,14 @@
 
 @media screen and (max-width: 600px) {
   .product-features-section {
-    padding: 16px;
+    padding: 32px 16px;
+    margin: 0;
   }
 
   .feature-right > img {
-    width: 343px;
-    height: 343px;
+    width: auto;
+    height: auto;
+    
   }
   .feature-container {
     flex-direction: column-reverse;

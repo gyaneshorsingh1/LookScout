@@ -115,14 +115,20 @@
 }
 
 .copyrights {
-  margin-top: 64px;
-  padding-top: 64px;
+  margin-top: 48px;
+  padding-top: 24px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-top: 1px solid #a5acba;
+  border-top: 0.1px solid #2E3545;
 }
 
+.copyrights>p{
+  color: #A5ACBA;
+  font-size: 16px;
+  letter-spacing: -0.1px;
+  font-weight: 400;
+}
 .social-medias {
   display: flex;
   justify-content: space-between;
@@ -137,7 +143,7 @@
   .footer-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 24px;
   }
   .footer-container > div {
     width: calc(50% - 1rem); /* two items per row with gap */
@@ -190,17 +196,33 @@
   .footer-sec2:nth-of-type(3) {
     order: 4;
   } /* Was third, now fourth */
+
+
+
+  .copyrights {
+  padding-top: 16px;
+
+}
+
+.social-medias {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 24px;
+}
 }
 
 @media screen and (max-width: 600px) {
-    .footer-section{
-        padding: 16px;
-    }
-  .footer-container {
-    padding: 0;
+  
+
+  .footer-section{
+    padding: 32px 16px;
   }
 
-
+  .footer-container{
+    row-gap: 24px;
+    column-gap: 64px;
+  }
   /* Default order for all sections */
   .footer-sec1 {
     order: 0;
@@ -210,9 +232,11 @@
   } /* Move this to second */
   .footer-sec2:nth-of-type(2) {
     order: 1;
+    flex: 1 1 5%;
   } /* Was second, now third */
   .footer-sec2:nth-of-type(3) {
     order: 2;
+    flex: 1 1 5%;
   } /* Was third, now fourth */
 
 
@@ -222,7 +246,7 @@
 
   .resources,
   .products {
-    flex: 1 1 50%; /* Each will take 50% of the width */
+    flex: 1 1 10%; /* Each will take 50% of the width */
   }
 
   .footer-sec3 {
@@ -232,9 +256,12 @@
 
   .copyrights{
     flex-direction: column;
-    row-gap: 16px;
+    gap: 16px;
+    margin-top: 24px;
+    padding-top: 16px;
   }
   .copyrights>.social-medias{
-    padding: 16px;
+    padding: 0 16px;
+    
   }
 }
