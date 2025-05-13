@@ -3,7 +3,7 @@
 import "./ProductFeatures.css";
 import "./message.css";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import useWindowWidth from "./WindowWidth/UseWindowWidth";
+import useWindowWidth from "./WindowWidth/useWindowWidth";
 
 
 export default function ProductFeatures() {
