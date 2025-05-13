@@ -1,16 +1,49 @@
+"use client";
+
 import "./Footer.css";
-export default function Footer(){
-    return(
-        <>
-          <section className="footer-section">
-             <div className="footer-container">
-                <div className="footer-sec1">
+import { motion } from "framer-motion";
+
+export default function Footer() {
+    const sectionVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: (i) => ({
+            opacity: 1,
+            y: 0,
+            transition: {
+                delay: i * 0.3,
+                duration: 0.6,
+                ease: "easeOut"
+            }
+        })
+    };
+
+    return (
+        <section className="footer-section">
+            <div className="footer-container">
+                {/* Section 1: Logo & text */}
+                <motion.div
+                    className="footer-sec1"
+                    variants={sectionVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    custom={0}
+                    viewport={{ once: true }}
+                >
                     <div>
                         <img src="Lookscout.png" />
                     </div>
                     <p>Generate outside the box thinking with the possibility to targtet the low.</p>
-                </div>
-                <div className="footer-sec2">
+                </motion.div>
+
+                {/* Section 2: Resources */}
+                <motion.div
+                    className="footer-sec2"
+                    variants={sectionVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    custom={1}
+                    viewport={{ once: true }}
+                >
                     <div>
                         <h2>Resources</h2>
                     </div>
@@ -20,8 +53,17 @@ export default function Footer(){
                         <p>Help Center</p>
                         <p>Partners</p>
                     </div>
-                </div>
-                <div className="footer-sec2">
+                </motion.div>
+
+                {/* Section 3: Products */}
+                <motion.div
+                    className="footer-sec2"
+                    variants={sectionVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    custom={2}
+                    viewport={{ once: true }}
+                >
                     <div>
                         <h2>Products</h2>
                     </div>
@@ -31,8 +73,17 @@ export default function Footer(){
                         <p>Features</p>
                         <p>Enterprise</p>
                     </div>
-                </div>
-                <div className="footer-sec3">
+                </motion.div>
+
+                {/* Section 4: Email Form */}
+                <motion.div
+                    className="footer-sec3"
+                    variants={sectionVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    custom={3}
+                    viewport={{ once: true }}
+                >
                     <div>
                         <h2>Get Email Notifications</h2>
                     </div>
@@ -43,18 +94,30 @@ export default function Footer(){
                             <button>Submit</button>
                         </div>
                     </div>
-                </div>
-             </div>
-             <div className="copyrights">
+                </motion.div>
+            </div>
+
+            {/* Copyright & Social Media */}
+            <motion.div
+                className="copyrights"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.3 }}
+                viewport={{ once: true }}
+            >
                 <p>© 2023 Lookscout. All Rights Reserved.</p>
                 <div className="social-medias">
-                    <img src="fb.png" alt="" />
-                    <img src="google.png" alt="" />
-                    <img src="apple.png" alt="" />
-                    <img src="insta.png" alt="" />
+                    {["fb.png", "google.png", "apple.png", "insta.png"].map((src, i) => (
+                        <motion.img
+                            key={i}
+                            src={src}
+                            alt={`icon-${i}`}
+                            whileHover={{ scale: 1.2 }}
+                            transition={{ type: "spring", stiffness: 300 }}
+                        />
+                    ))}
                 </div>
-             </div>
-          </section>
-        </>
-    )
+            </motion.div>
+        </section>
+    );
 }
