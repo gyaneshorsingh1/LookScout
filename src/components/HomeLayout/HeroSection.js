@@ -129,7 +129,7 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          <motion.div
+          {/* <motion.div
             className="right-hero"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -140,7 +140,7 @@ export default function HeroSection() {
               {message && <div className="notification-message">{message}</div>}
               <img src="hero-img.png" alt="hero img" className="hero-img" />
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </>
