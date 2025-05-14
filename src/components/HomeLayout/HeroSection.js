@@ -27,11 +27,14 @@ export default function HeroSection() {
       const data = await response.json();
 
       if (Notification.permission === "granted") {
-        const registration = await navigator.serviceWorker.ready;
-        registration.showNotification("🔔 New Message", {
-          body: data.message,
-          icon: "/lookscout-small-icon.png",
-        });
+        const registration = await navigator.serviceWorker.getRegistration();
+        if (registration) {
+          registration.showNotification("🔔 New Message", {
+            body: data.message,
+            icon: "/lookscout-small-icon.png",
+          });
+        }
+
 
         const updatedCount = clickCount + 1;
         setClickCount(updatedCount);

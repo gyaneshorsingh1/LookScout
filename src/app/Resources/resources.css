@@ -8,6 +8,7 @@
 
 .resources-container>h1{
     color: #007bff;
+    font-size: 2vmax;
 }
 .description {
   margin-top: 1rem;
