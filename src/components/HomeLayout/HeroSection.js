@@ -14,65 +14,65 @@ export default function HeroSection() {
 
 
 const sendNotification = async () => {
-  try {
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-    const isInStandaloneMode = window.navigator.standalone === true;
-    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    try {
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+      const isInStandaloneMode = window.navigator.standalone === true;
+      const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
-    console.log("User Agent:", navigator.userAgent);
-    console.log("iOS:", isIOS, "Standalone:", isInStandaloneMode, "Safari:", isSafari);
-    
-    // iPhone needs to be added to Home Screen for notifications to work only on Safari
-    if (isIOS && isSafari && !isInStandaloneMode) {
-      toast.error("📱 iPhone Safari requires app to be added to Home Screen for notifications.");
-      return;
-    }
+      console.log("User Agent:", navigator.userAgent);
+      console.log("iOS:", isIOS, "Standalone:", isInStandaloneMode, "Safari:", isSafari);
 
-    // Check if the environment supports service workers and showNotification
-    if (!navigator.serviceWorker || !('showNotification' in ServiceWorkerRegistration.prototype)) {
-      toast.error("❌ Notifications not supported in this environment.");
-      return;
-    }
-
-    // Ask for notification permission if it's not granted yet
-    if (Notification.permission !== "granted") {
-      const permission = await Notification.requestPermission();
-      if (permission !== "granted") {
-        toast.error("🚫 Notification permission denied.");
+      // iPhone needs to be added to Home Screen for notifications to work only on Safari
+      if (isIOS && isSafari && !isInStandaloneMode) {
+        toast.error("📱 iPhone Safari requires app to be added to Home Screen for notifications.");
         return;
       }
-      toast.success("✅ Permission granted.");
+
+      // Check if the environment supports service workers and showNotification
+      if (!navigator.serviceWorker || !('showNotification' in ServiceWorkerRegistration.prototype)) {
+        toast.error("❌ Notifications not supported in this environment.");
+        return;
+      }
+
+      // Ask for notification permission if it's not granted yet
+      if (Notification.permission !== "granted") {
+        const permission = await Notification.requestPermission();
+        if (permission !== "granted") {
+          toast.error("🚫 Notification permission denied.");
+          return;
+        }
+        toast.success("✅ Permission granted.");
+      }
+
+      // Fetch the notification data
+      const response = await fetch("/api/notify", { method: "POST" });
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`Server error: ${response.status} - ${errorText}`);
+      }
+
+      const data = await response.json();
+
+      // Ensure service worker is registered before showing notification
+      const registration = await navigator.serviceWorker.getRegistration();
+      if (!registration) {
+        toast.error("⚠️ Service worker not registered.");
+        return;
+      }
+
+      // Show the notification with the received message
+      registration.showNotification("🔔 New Message", {
+        body: data.message,
+        icon: "/lookscout-small-icon.png",
+      });
+
+      toast.success(data.message);
+
+    } catch (error) {
+      console.error("Notification error:", error);
+      toast.error(`❌ ${error.message || "Something went wrong."}`);
     }
-
-    // Fetch the notification data
-    const response = await fetch("/api/notify", { method: "POST" });
-    if (!response.ok) {
-      const errorText = await response.text();
-      throw new Error(`Server error: ${response.status} - ${errorText}`);
-    }
-
-    const data = await response.json();
-
-    // Ensure service worker is registered before showing notification
-    const registration = await navigator.serviceWorker.getRegistration();
-    if (!registration) {
-      toast.error("⚠️ Service worker not registered.");
-      return;
-    }
-
-    // Show the notification with the received message
-    registration.showNotification("🔔 New Message", {
-      body: data.message,
-      icon: "/lookscout-small-icon.png",
-    });
-
-    toast.success(data.message);
-
-  } catch (error) {
-    console.error("Notification error:", error);
-    toast.error(`❌ ${error.message || "Something went wrong."}`);
-  }
-};
+  };
 
 
 
@@ -80,19 +80,16 @@ const sendNotification = async () => {
 
 
 
-  useEffect(() => {
+useEffect(() => {
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker
-        .register('/sw.js')
-        .then((registration) => {
-          console.log('Service Worker registered:', registration);
-        })
-        .catch((error) => {
-          console.error('Service Worker registration failed:', error);
-        });
+      navigator.serviceWorker.register('/service-worker.js').then((registration) => {
+        console.log('Service Worker registered with scope:', registration.scope);
+      }).catch((error) => {
+        console.error('Service Worker registration failed:', error);
+      });
     }
   }, []);
-
+  
 
   return (
     <>
