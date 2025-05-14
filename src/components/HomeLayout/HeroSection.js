@@ -31,7 +31,7 @@ export default function HeroSection() {
         const registration = await navigator.serviceWorker.ready;
         registration.showNotification("🔔 New Message", {
           body: data.message,
-          icon: "/Lookscout.png",
+          icon: "/lookscout-small-icon.png",
         });
 
         const updatedCount = clickCount + 1;
