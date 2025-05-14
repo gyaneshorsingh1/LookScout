@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-
 import "./herosection.css";
 
 export default function HeroSection() {

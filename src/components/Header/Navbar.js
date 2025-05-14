@@ -20,7 +20,7 @@ const itemVariants = {
 export default function Navbar() {
   const links = [
     { label: "Home", href: "/" },
-    { label: "Products", href: "/our-products" },
+    { label: "Products", href: "/Products" },
     { label: "Resources", href: "/Resources" },
     { label: "Contacts", href: "/Contacts" },
   ];

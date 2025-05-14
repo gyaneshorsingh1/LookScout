@@ -1,0 +1,34 @@
+.resources-container {
+  padding: 3rem;
+  text-align: center;
+    max-width: 100%;
+  height: 100vh;
+  background: #000000cd;
+}
+
+.resources-container>h1{
+    color: #007bff;
+}
+.description {
+  margin-top: 1rem;
+  color: #555;
+  font-size: 1.2rem;
+}
+
+.resource-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.resource-list li {
+  font-size: 1.2rem;
+  color: #007bff;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.resource-list li:hover {
+  color: #0056b3;
+}
