@@ -17,17 +17,26 @@ export default function HeroSection() {
   //   }
   // }, []);
 
- const sendNotification = async () => {
+const sendNotification = async () => {
   try {
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const isInStandaloneMode = window.navigator.standalone === true;
+
+    // iOS does not support Notification API unless it's a PWA
+    if (isIOS && !isInStandaloneMode) {
+      toast.error("⚠️ On iOS, notifications only work when app is added to Home Screen (PWA).");
+      return;
+    }
+
     // Ask for permission if not already granted
     if (Notification.permission !== "granted") {
       const permission = await Notification.requestPermission();
 
       if (permission !== "granted") {
-        alert("Permission denied. Notifications will not be sent.");
+        toast.error("🚫 Permission denied. Notifications will not be sent.");
         return;
       } else {
-        toast("✅ Thanks! Notification permission granted.");
+        toast.success("✅ Thanks! Notification permission granted.");
       }
     }
 
@@ -49,15 +58,15 @@ export default function HeroSection() {
         });
       }
 
-      toast(data.message)
-      
-      
+      toast(data.message);
     }
-    
+
   } catch (error) {
     console.error("Error:", error);
+    toast.error("Something went wrong while sending the notification.");
   }
 };
+
 
 
 
