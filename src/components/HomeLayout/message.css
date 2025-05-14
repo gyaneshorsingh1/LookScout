@@ -2,6 +2,7 @@
   background: #ffffff;
   color: #272d37;
   padding: 64px 100px;
+  max-width: 100%;
 }
 
 .message-heading {
@@ -25,9 +26,8 @@
 
 .box-section {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
   column-gap: 32px;
   row-gap: 64px;
   margin-top: 64px;
@@ -35,7 +35,8 @@
 
 .msg-box {
   height: 220px;
-  width: 384px;
+  max-width: 384px;
+  width: auto;
   border-radius: 5px;
 
   display: flex;
@@ -83,7 +84,60 @@
   margin-left: 5px;
 }
 
-@media screen and (max-width: 1150px) {
+@media screen and (min-width: 1600px) {
+  .message-section {
+    padding: 50px 160px;
+  }
+  .message-heading > h2 {
+    font-size: 40px;
+  }
+
+  .message-heading > p {
+    font-size: 18px;
+  }
+
+  .box-section {
+    column-gap: 48px;
+    row-gap: 80px;
+  }
+
+  .msg-box {
+    max-width: 500px;
+    height: auto;
+    padding: 24px;
+  }
+
+  .msg-box > h4 {
+    font-size: 26px;
+  }
+
+  .msg-box > p {
+    font-size: 18px;
+  }
+
+  .msg-box > .learn-more {
+    font-size: 16px;
+  }
+
+  .learn-more > .arrow-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .message-section {
+    padding: 70px 240px;
+  }
+
+  .msg-box {
+    max-width: 600px;
+  }
+}
+
+
+
+@media screen and (max-width: 1350px) {
   .message-section {
     padding: 50px;
   }
@@ -98,7 +152,7 @@
     row-gap: 48px;
   }
   .msg-box {
-    width: 336px;
+    width: auto;
     height: 220px;
   }
 }
@@ -130,6 +184,7 @@
   }
   .box-section{
     display: flex;
+    flex-direction: column;
     row-gap: 40px;
     padding: 32px 0;
     margin: 0;

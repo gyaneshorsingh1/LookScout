@@ -94,6 +94,73 @@
     height: 20px;
 }
 
+@media screen and (min-width: 1920px) {
+  .sendemail {
+    padding: 70px 240px;
+  }
+
+  .sendemail-container > h2 {
+    font-size: 40px;
+    max-width: 1000px;
+  }
+
+  .email-input {
+    width: 600px;
+    height: 50px;
+  }
+
+  .email-input > input {
+    width: 520px;
+  }
+
+  .email-input > button {
+    width: 120px;
+  }
+
+  .list-tags {
+    gap: 60px;
+  }
+
+  .list-tags > li {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .sendemail {
+    padding: 50px 160px;
+  }
+
+  .sendemail-container > h2 {
+    font-size: 36px;
+    max-width: 900px;
+  }
+
+  .email-input {
+    width: 560px;
+    height: 48px;
+  }
+
+  .email-input > input {
+    width: 480px;
+  }
+
+  .email-input > button {
+    width: 110px;
+  }
+
+  .list-tags {
+    gap: 50px;
+  }
+
+  .list-tags > li {
+    font-size: 17px;
+  }
+}
+
+
+
+
 @media screen and (max-width:1150px) {
     .sendemail{
         padding: 50px;

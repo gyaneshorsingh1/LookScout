@@ -7,13 +7,13 @@
     align-items: center;
     flex-direction: row;
     padding: 0 100px;
-    height: 10vh;
+    height: 86px;
     border: 1px solid rgba(100, 142, 247, 1);
 }
 
 .left-nav{
     display: flex;
-    justify-content: space-between;
+    gap: 64px;
     align-items: center;
     width: 50%;
 }
@@ -24,9 +24,11 @@
     gap: 32px;
 }
 
-.nav-links > a{
+#tab-links{
    font-size: 15px;
 }
+
+
 
 
 
@@ -51,6 +53,18 @@
     display: none;
 }
 
+@media screen and (min-width: 1600px) {
+    .logo{
+        height: 50px;
+    }
+    #tab-links{
+        font-size: 25px;
+    }
+    .login-btn, .signup-btn{
+        font-size: 25px;
+        width: 120px;
+    }
+}
 
 @media screen and (max-width:1350px) {
     .navbar{

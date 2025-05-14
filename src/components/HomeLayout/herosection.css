@@ -1,18 +1,17 @@
 .hero-section {
   padding: 0 100px;
-  height: 90vh;
+  height: 656px;
   overflow: hidden;
+  max-width: 100%;
 }
-
 
 .notification-message {
   position: fixed;
   z-index: 5;
   top: 15vh;
   right: 50%;
-  transform: translate(50%,-50%);
+  transform: translate(50%, -50%);
   background-color: #18c6c6;
-
   border: 2px solid #17f6f6;
   color: white;
   padding: 10px;
@@ -22,11 +21,9 @@
   text-align: center;
 }
 
-
 .hero-main {
   width: auto;
   height: 100%;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -39,6 +36,7 @@
   width: 50%;
   gap: 40px;
 }
+
 .right-hero {
   width: 50%;
   height: 100%;
@@ -74,13 +72,14 @@
 .left-hero > div > p {
   margin-bottom: 16px;
 }
+
 .com-logos {
   display: flex;
   justify-content: space-around;
   gap: 10px;
-
   height: auto;
 }
+
 .com-logos > img {
   width: 112px;
   height: 28px;
@@ -92,6 +91,7 @@
   position: relative;
   align-items: center;
 }
+
 .hero-img {
   width: 448px;
   height: 560px;
@@ -107,6 +107,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .right-hero > .bg-box::after {
   content: "";
   height: 110vh;
@@ -118,13 +119,96 @@
   z-index: 1;
 }
 
+/* For large screens (1920px and above) */
+@media screen and (min-width: 1920px) {
+  .hero-section {
+    padding: 0 150px;
+  }
+
+  .left-hero > h2 {
+    font-size: 3vw;
+    line-height: normal;
+  }
+
+  .left-hero > p {
+    font-size: 1.2vw;
+  }
+
+  .notif-btn {
+    height: 80px;
+    width: 220px;
+    font-size: 22px;
+  }
+
+  .left-hero > div > p {
+    margin-bottom: 16px;
+    font-size: 1.2vw;
+  }
+
+  .com-logos > img {
+    width: 7vw;
+    height: auto;
+  }
+
+  .hero-img {
+    width: 500px;
+    height: 620px;
+  }
+
+  .right-hero > .bg-box::after {
+    height: 120vh;
+    left: 150px;
+    width: 1100px;
+  }
+}
+
+/* For medium to large screens (1460px) */
+@media screen and (min-width: 1600px) and (max-width: 1919px) {
+  .left-hero > h2 {
+    font-size: 2.8vw;
+    line-height: normal;
+  }
+
+  .left-hero > p {
+    font-size: 1vw;
+  }
+
+  .notif-btn {
+    height: 70px;
+    width: 200px;
+    font-size: 20px;
+  }
+
+  .left-hero > div > p {
+    margin-bottom: 16px;
+    font-size: 1vw;
+  }
+
+  .com-logos > img {
+    width: 6vw;
+    height: auto;
+  }
+
+  .hero-img {
+    width: 450px;
+    height: 580px;
+  }
+
+  .right-hero > .bg-box::after {
+    height: 110vh;
+    left: 120px;
+    width: 1000px;
+  }
+}
+
+/* For medium devices (1150px and below) */
 @media screen and (max-width: 1150px) {
   .hero-section {
     padding: 50px;
   }
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 778px) {
   .hero-section {
     padding: 48px;
     height: auto;
@@ -135,15 +219,17 @@
     height: auto;
     gap: 40px;
   }
+
   .left-hero,
   .right-hero {
     width: 100%;
     justify-content: center;
   }
 
-  .right-hero>.bg-box{
+  .right-hero > .bg-box {
     position: relative;
   }
+
   .right-hero > .bg-box::after {
     height: 150vh;
     top: auto;
@@ -168,22 +254,31 @@
 @media screen and (max-width: 600px) {
   .hero-section {
     padding: 16px;
+     height: 869px;
   }
+
+  .right-hero{
+   height: 343px;
+    width: 100%;
+  }
+
   .hero-img {
-    width: 274.6px;
-    height: 343.25px;
+    width: 100%;
+    height: auto;
   }
 
   .left-hero {
     gap: 16px;
     width: 100%;
   }
+
   .left-hero > h2 {
     font-size: 36px;
     line-height: 44px;
     font-weight: 600;
     letter-spacing: -2%;
   }
+
   .left-hero > p {
     font-size: 18px;
     color: rgba(255, 255, 255, 0.675);
@@ -191,13 +286,16 @@
     font-weight: 400;
     line-height: 26px;
   }
+
   .left-hero > div {
     width: 100%;
   }
+
   .com-logos > img {
     width: auto;
     height: 28px;
   }
+
   .com-logos {
     padding: 0 48px;
     display: grid;
@@ -206,6 +304,7 @@
     width: 100%;
     row-gap: 12px;
   }
+
   .notif-btn {
     height: 46px;
     width: 100%;
@@ -213,10 +312,12 @@
     border-radius: 6px;
     font-size: 15px;
   }
-  .right-hero>.bg-box{
-     width: 274.6px;
+
+  .right-hero > .bg-box {
+    width: 274.6px;
     height: 343.25px;
   }
+
   .right-hero > .bg-box::after {
     height: 90vh;
     top: auto;

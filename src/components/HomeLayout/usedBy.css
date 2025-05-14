@@ -43,6 +43,57 @@
   width: 128px;
 }
 
+@media screen and (min-width: 1920px) {
+  .usedby-section {
+    padding: 70px 240px !important;
+  }
+
+  .usedby-desc > h2 {
+    font-size: 40px;
+    max-width: 1000px;
+  }
+
+  .usedby-desc > p {
+    font-size: 18px;
+  }
+
+  .companies {
+    
+    gap: 40px;
+  }
+
+  .companies > img {
+    width: 160px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .usedby-section {
+    padding: 50px 160px;
+  }
+
+  .usedby-desc > h2 {
+    font-size: 36px;
+    max-width: 900px;
+  }
+
+  .usedby-desc > p {
+    font-size: 17px;
+  }
+
+  .companies {
+    gap: 32px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .companies > img {
+    width: 150px;
+    margin: auto;
+  }
+}
+
+
 @media screen and (max-width: 1150px) {
   .usedby-section {
     padding: 50px;

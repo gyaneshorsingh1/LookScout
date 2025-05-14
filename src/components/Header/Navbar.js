@@ -20,7 +20,7 @@ const itemVariants = {
 export default function Navbar() {
   const links = [
     { label: "Home", href: "/" },
-    { label: "Our Products", href: "/our-products" },
+    { label: "Products", href: "/our-products" },
     { label: "Resources", href: "/Resources" },
     { label: "Contacts", href: "/Contacts" },
   ];
@@ -45,7 +45,7 @@ export default function Navbar() {
         <div className="nav-links">
           {links.map((link, i) => (
             <motion.div key={link.href} custom={i} variants={itemVariants}>
-              <Link href={link.href}>{link.label}</Link>
+              <Link href={link.href} id="tab-links">{link.label}</Link>
             </motion.div>
           ))}
         </div>
@@ -65,6 +65,7 @@ export default function Navbar() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.1, duration: 0.5 }}
+          
         >
           Sign up
         </motion.button>

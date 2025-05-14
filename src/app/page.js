@@ -20,6 +20,9 @@ export default function Home() {
 
   return (
     <>
+    <div className="f-homepage">
+
+    
       
         <div className="first-section bg-primary-900">
           <Navbar />
@@ -79,6 +82,7 @@ export default function Home() {
           <Footer />
         </div>
       </AnimatedSection>
+      </div>
     </>
   );
 }
