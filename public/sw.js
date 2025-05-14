@@ -6,15 +6,16 @@ self.addEventListener("notificationclick", function (event) {
 });
 
 self.addEventListener("push", function (event) {
-  const data = event.data?.json() || {};
+  const data = event.data?.json() || {}; // Safely parse the incoming push data
 
-  const title = data.title || "Lookscout Notification";
+  const title = data.title || "Lookscout Notification"; // Default title
   const options = {
-    body: data.body || "Default body",
-    icon: "/Lookscout.png",
+    body: data.body || "Default body",  // Default body text
+    icon: "/Lookscout.png",  // Your app icon
+    badge: "/Lookscout.png"  // A badge icon, typically used for notifications
   };
 
   event.waitUntil(
-    self.registration.showNotification(title, options)
+    self.registration.showNotification(title, options)  // Display the notification
   );
 });
