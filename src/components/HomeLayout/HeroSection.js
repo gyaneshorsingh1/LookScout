@@ -6,46 +6,46 @@ import { motion } from "framer-motion";
 import "./herosection.css";
 
 export default function HeroSection() {
-  // const [message, setMessage] = useState("");
-  // const [clickCount, setClickCount] = useState(0);
+  const [message, setMessage] = useState("");
+  const [clickCount, setClickCount] = useState(0);
 
-  // useEffect(() => {
-  //   if (Notification.permission !== "granted") {
-  //     Notification.requestPermission();
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (Notification.permission !== "granted") {
+      Notification.requestPermission();
+    }
+  }, []);
 
-  // const sendNotification = async () => {
-  //   try {
-  //     const response = await fetch("/api/notify", { method: "POST" });
+  const sendNotification = async () => {
+    try {
+      const response = await fetch("/api/notify", { method: "POST" });
 
-  //     if (!response.ok) {
-  //       const errorText = await response.text();
-  //       throw new Error(`Server error: ${response.status} - ${errorText}`);
-  //     }
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`Server error: ${response.status} - ${errorText}`);
+      }
 
-  //     const data = await response.json();
+      const data = await response.json();
 
-  //     if (Notification.permission === "granted") {
-  //       const registration = await navigator.serviceWorker.getRegistration();
-  //       if (registration) {
-  //         registration.showNotification("🔔 New Message", {
-  //           body: data.message,
-  //           icon: "/lookscout-small-icon.png",
-  //         });
-  //       }
+      if (Notification.permission === "granted") {
+        const registration = await navigator.serviceWorker.getRegistration();
+        if (registration) {
+          registration.showNotification("🔔 New Message", {
+            body: data.message,
+            icon: "/lookscout-small-icon.png",
+          });
+        }
 
 
-  //       const updatedCount = clickCount + 1;
-  //       setClickCount(updatedCount);
-  //       const newMsg = `${data.message} (Sent ${updatedCount} time${updatedCount > 1 ? "s" : ""})`;
-  //       setMessage(newMsg);
-  //     }
+        const updatedCount = clickCount + 1;
+        setClickCount(updatedCount);
+        const newMsg = `${data.message} (Sent ${updatedCount} time${updatedCount > 1 ? "s" : ""})`;
+        setMessage(newMsg);
+      }
 
-  //   } catch (error) {
-  //     console.error("Error:", error);
-  //   }
-  // };
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
 
   // useEffect(() => {
   //   let timeout;
@@ -95,7 +95,7 @@ export default function HeroSection() {
               expectations. We have not reinvented the wheel, we decided to build upon it.
             </motion.p>
 
-            {/* <motion.button
+            <motion.button
               onClick={sendNotification}
               className="notif-btn"
               initial={{ opacity: 0, scale: 0.95 }}
@@ -104,7 +104,7 @@ export default function HeroSection() {
               viewport={{ once: true }}
             >
               Send Notification
-            </motion.button> */}
+            </motion.button>
 
             <motion.div
               initial={{ opacity: 0 }}
