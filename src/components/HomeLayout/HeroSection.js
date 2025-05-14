@@ -17,17 +17,18 @@ const sendNotification = async () => {
   try {
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
     const isInStandaloneMode = window.navigator.standalone === true;
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
     console.log("User Agent:", navigator.userAgent);
-    console.log("iOS:", isIOS, "Standalone:", isInStandaloneMode);
+    console.log("iOS:", isIOS, "Standalone:", isInStandaloneMode, "Safari:", isSafari);
     
-    // iPhone needs to be added to Home Screen for notifications to work
-    if (isIOS && !isInStandaloneMode) {
-      toast.error("📱 iPhone needs to add app to Home Screen for notifications.");
+    // iPhone needs to be added to Home Screen for notifications to work only on Safari
+    if (isIOS && isSafari && !isInStandaloneMode) {
+      toast.error("📱 iPhone Safari requires app to be added to Home Screen for notifications.");
       return;
     }
 
-    // Check if the browser supports service workers and notifications
+    // Check if the environment supports service workers and showNotification
     if (!navigator.serviceWorker || !('showNotification' in ServiceWorkerRegistration.prototype)) {
       toast.error("❌ Notifications not supported in this environment.");
       return;
@@ -72,6 +73,7 @@ const sendNotification = async () => {
     toast.error(`❌ ${error.message || "Something went wrong."}`);
   }
 };
+
 
 
 
