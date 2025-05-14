@@ -21,16 +21,19 @@ const sendNotification = async () => {
     console.log("User Agent:", navigator.userAgent);
     console.log("iOS:", isIOS, "Standalone:", isInStandaloneMode);
     
+    // iPhone needs to be added to Home Screen for notifications to work
     if (isIOS && !isInStandaloneMode) {
       toast.error("📱 iPhone needs to add app to Home Screen for notifications.");
       return;
     }
 
+    // Check if the browser supports service workers and notifications
     if (!navigator.serviceWorker || !('showNotification' in ServiceWorkerRegistration.prototype)) {
       toast.error("❌ Notifications not supported in this environment.");
       return;
     }
 
+    // Ask for notification permission if it's not granted yet
     if (Notification.permission !== "granted") {
       const permission = await Notification.requestPermission();
       if (permission !== "granted") {
@@ -40,6 +43,7 @@ const sendNotification = async () => {
       toast.success("✅ Permission granted.");
     }
 
+    // Fetch the notification data
     const response = await fetch("/api/notify", { method: "POST" });
     if (!response.ok) {
       const errorText = await response.text();
@@ -48,12 +52,14 @@ const sendNotification = async () => {
 
     const data = await response.json();
 
+    // Ensure service worker is registered before showing notification
     const registration = await navigator.serviceWorker.getRegistration();
     if (!registration) {
       toast.error("⚠️ Service worker not registered.");
       return;
     }
 
+    // Show the notification with the received message
     registration.showNotification("🔔 New Message", {
       body: data.message,
       icon: "/lookscout-small-icon.png",
@@ -66,6 +72,7 @@ const sendNotification = async () => {
     toast.error(`❌ ${error.message || "Something went wrong."}`);
   }
 };
+
 
 
 
