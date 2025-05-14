@@ -109,7 +109,7 @@ export default function HeroSection() {
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.7, duration: 0.6 }}
+              transition={{ delay: 0.4, duration: 0.4 }}
               viewport={{ once: true }}
             >
               <p>Who supports us</p>
@@ -121,8 +121,8 @@ export default function HeroSection() {
                     alt="logo"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.8 + i * 0.1, duration: 0.4 }}
-                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 + i * 0.1, duration: 0.2 }}
+                    viewport={{ once: false }}
                   />
                 ))}
               </div>
