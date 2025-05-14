@@ -11,35 +11,32 @@ export default function HeroSection() {
   const [message, setMessage] = useState("");
   const [clickCount, setClickCount] = useState(0);
 
-  // useEffect(() => {
-  //   if (Notification.permission !== "granted") {
-  //     Notification.requestPermission();
-  //   }
-  // }, []);
+
 
 const sendNotification = async () => {
   try {
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
     const isInStandaloneMode = window.navigator.standalone === true;
 
-    // iOS does not support Notification API unless it's a PWA
+    // iPhone Safari limitation: must be installed as PWA to support notifications
     if (isIOS && !isInStandaloneMode) {
-      toast.error("⚠️ On iOS, notifications only work when app is added to Home Screen (PWA).");
+      toast.error("📱 On iPhone, notifications work only if app is added to Home Screen.");
       return;
     }
 
-    // Ask for permission if not already granted
+    // Ask for notification permission
     if (Notification.permission !== "granted") {
       const permission = await Notification.requestPermission();
 
       if (permission !== "granted") {
-        toast.error("🚫 Permission denied. Notifications will not be sent.");
+        toast.error("🚫 Notification permission denied.");
         return;
       } else {
         toast.success("✅ Thanks! Notification permission granted.");
       }
     }
 
+    // Send notification data to backend
     const response = await fetch("/api/notify", { method: "POST" });
 
     if (!response.ok) {
@@ -49,6 +46,7 @@ const sendNotification = async () => {
 
     const data = await response.json();
 
+    // Show notification
     if (Notification.permission === "granted") {
       const registration = await navigator.serviceWorker.getRegistration();
       if (registration) {
@@ -56,14 +54,19 @@ const sendNotification = async () => {
           body: data.message,
           icon: "/lookscout-small-icon.png",
         });
+        toast(data.message); // Success toast
+      } else {
+        toast.error("⚠️ Service worker not registered.");
       }
-
-      toast(data.message);
     }
-
   } catch (error) {
-    console.error("Error:", error);
-    toast.error("Something went wrong while sending the notification.");
+    console.error("Notification error:", error);
+    
+    if (error.name === "TypeError") {
+      toast.error("📵 Notification API not supported or called incorrectly.");
+    } else {
+      toast.error("Something went wrong while sending the notification.");
+    }
   }
 };
 
