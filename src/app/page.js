@@ -36,7 +36,12 @@ export default function Home() {
             pauseOnFocusLoss
             draggable
             pauseOnHover
-            theme="light" />
+            theme="light"
+            toastStyle={{
+              marginTop: '3vh',
+              marginRight: '1rem',
+            }}
+          />
 
           <HeroSection />
         </div>
