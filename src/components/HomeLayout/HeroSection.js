@@ -1,9 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { toast } from "react-toastify";
 import { motion } from "framer-motion";
-import "react-toastify/dist/ReactToastify.css";
+
 
 import "./herosection.css";
 
@@ -29,7 +28,8 @@ export default function HeroSection() {
       const data = await response.json();
 
       if (Notification.permission === "granted") {
-        new Notification("🔔 New Message", {
+        const registration = await navigator.serviceWorker.ready;
+        registration.showNotification("🔔 New Message", {
           body: data.message,
           icon: "/Lookscout.png",
         });
@@ -38,8 +38,8 @@ export default function HeroSection() {
         setClickCount(updatedCount);
         const newMsg = `${data.message} (Sent ${updatedCount} time${updatedCount > 1 ? "s" : ""})`;
         setMessage(newMsg);
-        toast.success(newMsg);
       }
+
     } catch (error) {
       console.error("Error:", error);
     }
@@ -54,6 +54,20 @@ export default function HeroSection() {
     }
     return () => clearTimeout(timeout);
   }, [message]);
+
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('/sw.js')
+        .then((registration) => {
+          console.log('Service Worker registered:', registration);
+        })
+        .catch((error) => {
+          console.error('Service Worker registration failed:', error);
+        });
+    }
+  }, []);
+
 
   return (
     <>
