@@ -13,6 +13,8 @@ import SendEmail from "@/components/HomeLayout/SendEmail";
 import Footer from "@/components/Footer/Footer";
 import CustomerSays from "@/components/HomeLayout/CustomerSays";
 import AnimatedSection from "@/components/Animation/AnimatedSection";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Home() {
 
@@ -20,68 +22,78 @@ export default function Home() {
 
   return (
     <>
-    <div className="f-homepage">
+      <div className="f-homepage">
 
-    
-      
+
+
         <div className="first-section bg-primary-900">
           <Navbar />
+          <ToastContainer position="top-right" autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light" />
+
           <HeroSection />
         </div>
 
-      <AnimatedSection delay={0.1}>
-        <div className="message-for-all">
-          <Message />
-        </div>
-      </AnimatedSection>
+        <AnimatedSection delay={0.1}>
+          <div className="message-for-all">
+            <Message />
+          </div>
+        </AnimatedSection>
 
-      <AnimatedSection delay={0.2}>
-        <div className="product-features">
-          <ProductFeatures />
-        </div>
-      </AnimatedSection>
+        <AnimatedSection delay={0.2}>
+          <div className="product-features">
+            <ProductFeatures />
+          </div>
+        </AnimatedSection>
 
-      <AnimatedSection delay={0.2}>
-        <div className="section4-layout">
-          <LayoutFeature />
-        </div>
-      </AnimatedSection>
+        <AnimatedSection delay={0.2}>
+          <div className="section4-layout">
+            <LayoutFeature />
+          </div>
+        </AnimatedSection>
 
-      <AnimatedSection delay={0.2}>
-        <div className="customer-says-part">
-          <CustomerSays />
-        </div>
-      </AnimatedSection>
+        <AnimatedSection delay={0.2}>
+          <div className="customer-says-part">
+            <CustomerSays />
+          </div>
+        </AnimatedSection>
 
-      <AnimatedSection delay={0.2}>
-        <div className="thanks-section">
-          <Thanks />
-        </div>
-      </AnimatedSection>
+        <AnimatedSection delay={0.2}>
+          <div className="thanks-section">
+            <Thanks />
+          </div>
+        </AnimatedSection>
 
-      <AnimatedSection delay={0.2}>
-        <div className="blogs-part">
-          <Blogs />
-        </div>
-      </AnimatedSection>
+        <AnimatedSection delay={0.2}>
+          <div className="blogs-part">
+            <Blogs />
+          </div>
+        </AnimatedSection>
 
-      <AnimatedSection delay={0.2}>
-        <div className="usedby-companies">
-          <UsedBy />
-        </div>
-      </AnimatedSection>
+        <AnimatedSection delay={0.2}>
+          <div className="usedby-companies">
+            <UsedBy />
+          </div>
+        </AnimatedSection>
 
-      <AnimatedSection delay={0.2}>
-        <div className="sendemail-part">
-          <SendEmail />
-        </div>
-      </AnimatedSection>
+        <AnimatedSection delay={0.2}>
+          <div className="sendemail-part">
+            <SendEmail />
+          </div>
+        </AnimatedSection>
 
-      <AnimatedSection delay={0.2}>
-        <div className="footer">
-          <Footer />
-        </div>
-      </AnimatedSection>
+        <AnimatedSection delay={0.2}>
+          <div className="footer">
+            <Footer />
+          </div>
+        </AnimatedSection>
       </div>
     </>
   );

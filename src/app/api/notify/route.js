@@ -6,7 +6,7 @@ export async function POST(request) {
 
   return Response.json({
     success: true,
-    message: '🔔 Notification sent from Lookscout!',
+    message: '🔔 Notification sent from Lookscout API!',
   });
 }
 

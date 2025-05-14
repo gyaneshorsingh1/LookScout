@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import "./herosection.css";
 
@@ -25,7 +27,7 @@ export default function HeroSection() {
         alert("Permission denied. Notifications will not be sent.");
         return;
       } else {
-        alert("✅ Thanks! Notification permission granted.");
+        toast("✅ Thanks! Notification permission granted.");
       }
     }
 
@@ -47,26 +49,17 @@ export default function HeroSection() {
         });
       }
 
-      const updatedCount = clickCount + 1;
-      setClickCount(updatedCount);
-      const newMsg = `${data.message} (Sent ${updatedCount} time${updatedCount > 1 ? "s" : ""})`;
-      setMessage(newMsg);
+      toast(data.message)
+      
+      
     }
+    
   } catch (error) {
     console.error("Error:", error);
   }
 };
 
 
-  useEffect(() => {
-    let timeout;
-    if (message) {
-      timeout = setTimeout(() => {
-        setMessage("");
-      }, 5000);
-    }
-    return () => clearTimeout(timeout);
-  }, [message]);
 
   useEffect(() => {
     if ('serviceWorker' in navigator) {
@@ -148,7 +141,7 @@ export default function HeroSection() {
             viewport={{ once: true }}
           >
             <div className="bg-box">
-              {message && <div className="notification-message">{message}</div>}
+              
               <img src="hero-img.png" alt="hero img" className="hero-img" />
             </div>
           </motion.div>
