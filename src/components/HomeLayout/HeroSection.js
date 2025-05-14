@@ -9,11 +9,11 @@ export default function HeroSection() {
   const [message, setMessage] = useState("");
   const [clickCount, setClickCount] = useState(0);
 
-  useEffect(() => {
-    if (Notification.permission !== "granted") {
-      Notification.requestPermission();
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (Notification.permission !== "granted") {
+  //     Notification.requestPermission();
+  //   }
+  // }, []);
 
   // const sendNotification = async () => {
   //   try {
