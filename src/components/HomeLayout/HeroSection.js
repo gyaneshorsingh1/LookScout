@@ -15,37 +15,37 @@ export default function HeroSection() {
     }
   }, []);
 
-  const sendNotification = async () => {
-    try {
-      const response = await fetch("/api/notify", { method: "POST" });
+  // const sendNotification = async () => {
+  //   try {
+  //     const response = await fetch("/api/notify", { method: "POST" });
 
-      if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(`Server error: ${response.status} - ${errorText}`);
-      }
+  //     if (!response.ok) {
+  //       const errorText = await response.text();
+  //       throw new Error(`Server error: ${response.status} - ${errorText}`);
+  //     }
 
-      const data = await response.json();
+  //     const data = await response.json();
 
-      if (Notification.permission === "granted") {
-        const registration = await navigator.serviceWorker.getRegistration();
-        if (registration) {
-          registration.showNotification("🔔 New Message", {
-            body: data.message,
-            icon: "/lookscout-small-icon.png",
-          });
-        }
+  //     if (Notification.permission === "granted") {
+  //       const registration = await navigator.serviceWorker.getRegistration();
+  //       if (registration) {
+  //         registration.showNotification("🔔 New Message", {
+  //           body: data.message,
+  //           icon: "/lookscout-small-icon.png",
+  //         });
+  //       }
 
 
-        const updatedCount = clickCount + 1;
-        setClickCount(updatedCount);
-        const newMsg = `${data.message} (Sent ${updatedCount} time${updatedCount > 1 ? "s" : ""})`;
-        setMessage(newMsg);
-      }
+  //       const updatedCount = clickCount + 1;
+  //       setClickCount(updatedCount);
+  //       const newMsg = `${data.message} (Sent ${updatedCount} time${updatedCount > 1 ? "s" : ""})`;
+  //       setMessage(newMsg);
+  //     }
 
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
+  //   } catch (error) {
+  //     console.error("Error:", error);
+  //   }
+  // };
 
   // useEffect(() => {
   //   let timeout;
@@ -96,7 +96,7 @@ export default function HeroSection() {
             </motion.p>
 
             <motion.button
-              onClick={sendNotification}
+              // onClick={sendNotification}
               className="notif-btn"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
