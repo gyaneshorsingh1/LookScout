@@ -8,10 +8,10 @@ import { motion } from "framer-motion";
 
 export default function LayoutFeature() {
     const cardVariants = {
-        hidden: { opacity: 0, x: 30 },
+        hidden: { opacity: 0, y: 30 },
         visible: (i) => ({
             opacity: 1,
-            x: 0,
+            y: 0,
             transition: { delay: i * 0.3 },
         }),
     };

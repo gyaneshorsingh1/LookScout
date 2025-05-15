@@ -74,12 +74,6 @@ const sendNotification = async () => {
     }
   };
 
-
-
-
-
-
-
 useEffect(() => {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/service-worker.js').then((registration) => {
@@ -89,7 +83,7 @@ useEffect(() => {
       });
     }
   }, []);
-  
+
 
   return (
     <>
@@ -120,7 +114,7 @@ useEffect(() => {
               className="notif-btn"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5, duration: 0.4 }}
+              transition={{ delay: 0, duration: 0.4 }}
               viewport={{ once: true }}
             >
               Send Notification
@@ -129,7 +123,7 @@ useEffect(() => {
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.4 }}
+              transition={{ delay: 0, duration: 0.2 }}
               viewport={{ once: true }}
             >
               <p>Who supports us</p>
@@ -141,8 +135,8 @@ useEffect(() => {
                     alt="logo"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.2 + i * 0.1, duration: 0.2 }}
-                    viewport={{ once: false }}
+                    transition={{ delay: i * 0.1, duration: 0.2 }}
+                    
                   />
                 ))}
               </div>
