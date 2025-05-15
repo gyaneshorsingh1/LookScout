@@ -70,7 +70,7 @@ const sendNotification = async () => {
 
     } catch (error) {
       console.error("Notification error:", error);
-      toast.error(`❌ ${error.message || "Something went wrong."}`);
+      toast.error(`❌ ${error.message || "Something went wrong!"}`);
     }
   };
 
